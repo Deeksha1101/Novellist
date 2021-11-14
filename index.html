@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="https://pics.freeicons.io/uploads/icons/png/17101267261557740324-512.png" type="image/x-icon">
+
+    <title>Welcome To Novelist</title>
+  </head>
+  <body onload="reloadTaskCard()">
+
+<!-- modal  -->
+ <!-- <div
+      class="modal fade"
+      id="newcardmodal"
+      tabindex="-1"
+      aria-labelledby="newcardmodallabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">ADD NEW BOOK</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label">Book Image URL</label>
+              <input type="url" class="form-control" id="imageURL" />
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">BOOK TITLE</label>
+              <input type="url" class="form-control" id="bookTitle" />
+            </div>
+
+              <div class="mb-3">
+              <label class="form-label">BOOK Type</label>
+              <input type="url" class="form-control" id="bookType" />
+            </div>
+
+             <div class="mb-3">
+              <label for="bookAuthor" class="form-label">Book Author</label>
+              <input type="url" class="form-control" id="bookAuthor" />
+            </div>
+
+
+ <div class="mb-3">
+              <label for="bookRatings" class="form-label">Book Ratings</label>
+              <input type="url" class="form-control" id="bookRatings" />
+            </div>
+
+              <div class="mb-3">
+              <label for="bookPrice" class="form-label">BOOK PRICE</label>
+              <input type="url" class="form-control" id="bookPrice" />
+            </div>
+
+            <div class="mb-3">
+              <label for="bookDescription" class="form-label"
+                >BOOK DESCRIPTION</label
+              >
+              <textarea
+                rows="3"
+                class="form-control"
+                id="bookDescription"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              onclick="addBook()"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+ <!-- //modal  -->
+    <div
+      class="modal fade"
+      id="newcardmodal"
+      tabindex="-1"
+      aria-labelledby="newcardmodallabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header" style="border-top: 1 px solid #96c9fb;">
+            <h5 class="modal-title">SELL NEW BOOK</h5>
+            <button
+              type="button"
+              class="btn-close bg-info"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="imageURL" class="form-label">Book URL</label>
+              <input type="url" class="form-control" id="imageURL" />
+            </div>
+
+            <div class="mb-3">
+              <label for="taskTitle" class="form-label">BOOK TITLE</label>
+              <input type="url" class="form-control" id="taskTitle" />
+            </div>
+
+            <div class="mb-3">
+              <label for="taskType" class="form-label">Price</label>
+              <input type="url" class="form-control" id="taskType" />
+            </div>
+
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label"
+                >BOOK DESCRIPTION</label
+              >
+              <textarea
+                rows="3"
+                class="form-control"
+                id="taskDescription"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="modal-footer"  style="border-top: 1 px solid #96c9fb;">
+            <button
+              onclick="addCard()"
+              type="button"
+             
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- alert badge  -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong?>Welcome Back Diksha !</strong> Sold Your Old Novels Now
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <!-- nav1  -->
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Follow us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Email</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled">Work With Us</a>
+      </li>
+    </ul>
+
+    <!-- nav 2 -->
+    <Container fluid>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand novelist" href="#">Novelist</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 300px"
+            >
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">All Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">WishList</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </Container>
+
+    <!-- carousel -->
+    <div
+      id="carouselExampleInterval"
+      class="carousel slide mb-lg-5 carousel-dark"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img
+            style="height: 500px"
+            src="https://i0.wp.com/post.greatist.com/wp-content/uploads/sites/2/2021/07/360224-Take-a-Trip-Through-Time-with-the-Latest-Historical-Fiction-Novels-1296x728-Header-d1ddf6-1.jpg?w=1155&h=1528"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            style="height: 500px"
+            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/080819-fiction-books-1565300875.png?crop=1.00xw:1.00xh;0,0&resize=980:*"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            style="height: 500px"
+            src="https://stylecaster.com/wp-content/uploads/2018/11/holiday-books.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleInterval"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <hr />
+    <!-- features cards  -->
+    <h2 style="text-align: center; color: blanchedalmond">About Us :</h2>
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <div class="container bootstrap snippets bootdey" style=" margin-bottom: 2rem;">
+      <div class="row" style="justify-content: center;">
+        <div class="col-md-5">
+          <div class="widget-head-color-box lazur-bg p-lg text-center">
+            <div class="m-b-md">
+              <h2 class="font-bold no-margins">Deeksha Khattar</h2>
+              <small>Founder of Novelist</small>
+            </div>
+            <img
+              src="https://bootdey.com/img/Content/user_1.jpg"
+              class="img-circle circle-border m-b-md"
+              alt="profile"
+            />
+            <div>
+              <span>100 Tweets</span> | <span>350 Following</span> |
+              <span>610 Followers</span>
+            </div>
+          </div>
+          <div class="widget-text-box">
+            <h4 class="media-heading">Deeksha Khattar</h4>
+            <p>
+           I want people to read more and more books as books are the best therapist
+            </p>
+            <div class="text-right">
+              <a class="btn btn-xs btn-default"
+                ><i class="fa fa-thumbs-up"></i> Like
+              </a>
+              <a class="btn btn-xs btn-primary"
+                ><i class="fa fa-heart"></i> Love</a
+              >
+              <a class="btn btn-xs btn-success"
+                ><i class="fa fa fa-envelope"></i> Message</a
+              >
+              <a class="btn btn-xs btn-info"
+                ><i class="fa fa fa-phone"></i> Call</a
+              >
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <hr />
+
+    <!-- stylish cards  -->
+     <h2 style="text-align: center; color: blanchedalmond; margin-bottom: 2rem; margin-top: 2rem;">Featured Books :</h2>
+<div class="stylishcard row" style="
+    justify-content: center; row-gap: 30px;
+    column-gap: 20px; margin-bottom: 5rem;">
+    <div class="card cardd-card">
+    <div class="card-img cardd-img">
+<img style="width: 250px; height: 400px;" src="https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg" alt="">
+    </div>
+    <div class="card-body cardd-body">
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <div class="content cardd-content">
+            <h2 class="title cardd-title">Atomic Habits</h2>
+            <p class="para">No matter your goals, Atomic Habits offers a proven framework for improving--every day</p>
+        </div>
+    </div>
+</div>
+
+    <div class="card cardd-card">
+    <div class="card-img cardd-img">
+<img style="width: 250px; height: 400px;" src="https://images-na.ssl-images-amazon.com/images/I/61npIDH7htL.jpg" alt="">
+    </div>
+    <div class="card-body cardd-body">
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <div class="content cardd-content">
+            <h2 class="title cardd-title">Ichigo Ichie</h2>
+            <p class="para">This book makes a clear, powerful stand on how to live in the present.</p>
+        </div>
+    </div>
+</div>
+
+    <div class="card cardd-card">
+    <div class="card-img cardd-img">
+<img style="width: 250px; height: 400px;" src="https://images-na.ssl-images-amazon.com/images/I/7195f4cdAVL.jpg" alt="">
+    </div>
+    <div class="card-body cardd-body">
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <div class="content cardd-content">
+            <h2 class="title cardd-title">Everything Is Fucked</h2>
+            <p class="para">Smart and funny, this book will help you make sense of your mind and the world we live in</p>
+        </div>
+    </div>
+</div>
+
+    <div class="card cardd-card">
+    <div class="card-img cardd-img">
+<img style="width: 250px; height: 400px;" src="https://10mustreads.com/wp-content/uploads/2021/01/9781451639612_p0_v7_s1200x630.jpg" alt="">
+    </div>
+    <div class="card-body cardd-body">
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <span class="bg"></span>
+        <div class="content cardd-content">
+            <h2 class="title cardd-title">The 7 Habits of Highly Effective People</h2>
+            <p class="para"> this is a book people either hate or they think it's great </p>
+        </div>
+    </div>
+</div>
+</div>
+
+<hr style="color: rgb(224, 200, 93);">
+
+<!-- book selling section  -->
+    <h2 style="text-align: center; margin-top: 2rem;color: blanchedalmond;" class="mt-lg-5 mb-lg-4"> 
+      Sold Books At Affordable Price Now!! <button 
+          data-bs-toggle="modal"
+            data-bs-target="#newcardmodal" type="button" class="btn btn-warning pb-3"  id="sellbtn"><b style="font-size: 25px;">+</b> Sell New Book</button>
+    </h2>
+  
+    <!-- //card -->
+    <main class="container">
+      <section>
+        <div id="taskContents" class="row"></div>
+      </section>
+    </main>
+<hr>
+    <!-- footer -->
+    <footer class="text-center text-white" style="background-color: #caced1">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Images -->
+        <section class="">
+          <div class="row">
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=990&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1419640303358-44f0d27f48e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=785&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1490633874781-1c63cc424610?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1592271019270-7b1b1ffe3b22?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1478&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1533271802434-53997a5f9e6c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2)"
+                  ></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Images -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: hsla(0, 84%, 32%, 0.8)">
+        © 2021 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/"
+          >Novelist.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script src="index.js"></script>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

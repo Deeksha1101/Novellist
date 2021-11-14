@@ -1,0 +1,284 @@
+body {
+  margin-top: 0px;
+  background-color: rgb(8, 5, 5);
+  overflow-x: hidden;
+}
+
+.uppernav {
+  height: 30px;
+}
+
+.navbar-brand {
+  font-size: 0.8rem;
+  margin-right: 25rem;
+}
+
+.contact {
+  padding-left: 4rem;
+}
+
+.searchbtn {
+  padding: -1.625rem 0.75rem;
+}
+
+svg.bi.bi-search {
+  align-self: center;
+  padding-left: 3px;
+  height: 17px;
+}
+
+span.navbar-text.d-flex {
+  margin-right: 117px;
+}
+
+div#navbarScroll {
+  padding: 0px 119px;
+}
+
+/* @media only screen and (max-width: 1326px) {
+  div#navbarScroll {
+    padding: 0px 255px;
+  }
+  a.navbar-brand {
+    padding-left: 48px;
+  }
+} */
+
+a.navbar-brand {
+  padding-left: 48px;
+}
+
+.nav-link {
+  font-weight: bold;
+  /* color: #18fb9d; */
+}
+
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .show > .nav-link {
+  color: rgb(88 241 181);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(88 241 181);
+}
+
+.novelist {
+  padding: 0;
+  font-size: 26px;
+  font-family: "Ceviche One", cursive;
+}
+
+/* feature cards  */
+/* body {
+  margin-top: 20px;
+} */
+
+.p-lg {
+  padding: 30px;
+}
+
+.lazur-bg {
+  background-color: #23c6c8;
+  color: #ffffff;
+}
+
+.red-bg {
+  background-color: #ed5565;
+  color: #ffffff;
+}
+
+.navy-bg {
+  background-color: #1ab394;
+  color: #ffffff;
+}
+
+.yellow-bg {
+  background-color: #f8ac59;
+  color: #ffffff;
+}
+
+.widget-head-color-box {
+  border-radius: 5px 5px 0px 0px;
+  margin-top: 10px;
+}
+
+.m-b-md {
+  margin-bottom: 20px;
+}
+
+.no-margins {
+  margin: 0 !important;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+img.circle-border {
+  border: 6px solid #ffffff;
+  border-radius: 50%;
+}
+
+.widget-text-box {
+  padding: 20px;
+  border: 1px solid #e7eaec;
+  background: #ffffff;
+}
+
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+img.img-fluid.rounded-start {
+  margin-left: 5%;
+  margin-top: 46%;
+}
+
+/* sold button  */
+button.btn.btn-warning {
+  margin-left: 20%;
+}
+
+hr {
+  color: #02a182;
+}
+
+/* stylish cards */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    background: rgb(49, 162, 255);
+    perspective: 1000px;
+} */
+
+.cardd-card {
+  margin-left: 32px;
+  width: 250px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s;
+}
+
+.cardd-img {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  /* background: url(https://github.com/kunaal438/card-hover/blob/master/img.jpg?raw=true); */
+  background-size: cover;
+  border-radius: 20px;
+  /* transform: translateZ(40px); */
+}
+
+.cardd-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, -40px) rotateY(180deg);
+  width: 85%;
+  height: 87%;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 5px solid rgba(44, 255, 139, 0.979);
+}
+
+.cardd-card:hover {
+  transform: rotateY(180deg);
+}
+
+.cardd-body .bg {
+  position: absolute;
+  background: rgb(85, 255, 190);
+  border-radius: 100px;
+  width: 0%;
+  transition: 0.5s;
+}
+
+.cardd-body .bg:nth-child(1) {
+  height: 25%;
+  transform-origin: left;
+  top: 0;
+  left: -30%;
+  transform: rotate(-10deg);
+}
+
+.cardd-body .bg:nth-child(2) {
+  height: 50%;
+  transform-origin: right;
+  top: 5%;
+  right: -30%;
+  transform: rotate(-10deg);
+}
+
+.cardd-body .bg:nth-child(3) {
+  height: 50%;
+  transform-origin: left;
+  top: 70%;
+  left: -30%;
+  transform: rotate(-10deg);
+}
+
+.cardd-card:hover .cardd-body .bg {
+  width: 200%;
+  transition-delay: 1s;
+}
+
+.cardd-card:hover .cardd-body .bg:nth-child(2) {
+  transition-delay: 1.5s;
+}
+
+.cardd-card:hover .cardd-body .bg:nth-child(3) {
+  transition-delay: 2s;
+}
+
+.cardd-content {
+  position: relative;
+  opacity: 0;
+  transition: 0.5s;
+  padding: 40px 10px;
+  text-align: center;
+  align-self: start;
+}
+
+.cardd-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #080707;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+.cardd-card:hover .cardd-content {
+  opacity: 1;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  transition-delay: 2.5s;
+}
+
+.row > * {
+  padding-left: 0px;
+}
+
+.g-3,
+.gx-3 {
+  --bs-gutter-x: 8rem;
+}
+
+.modal-footer {
+  border-top: 1 px solid #96c9fb;
+}
+
+.btn-close {
+  opacity: 1.5;
+}
